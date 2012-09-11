@@ -1,0 +1,2 @@
+module HoaHelper
+end
