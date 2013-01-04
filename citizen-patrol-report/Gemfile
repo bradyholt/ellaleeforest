@@ -38,3 +38,5 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'google_drive'
+gem 'therubyracer', :platform => :ruby
+gem 'libv8', '~> 3.11.8'
