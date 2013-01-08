@@ -58,5 +58,9 @@ module CitizenPatrolReport
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.gdata_username = 'ellaleeforest@gmail.com'
+    config.gdata_password = 'elfhouston'
+    config.gdata_reportkey = '0AumP8MJ6pPMwdG03WUQ0SEV6cm5tTklqRF95aWUtNVE'
   end
 end

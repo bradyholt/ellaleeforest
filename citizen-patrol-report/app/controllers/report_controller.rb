@@ -1,11 +1,15 @@
 class ReportController < ApplicationController
 	def show
+		username = CitizenPatrolReport::Application.config.gdata_username
+  		password = CitizenPatrolReport::Application.config.gdata_password
+  		reportkey = CitizenPatrolReport::Application.config.gdata_reportkey
+
 		@patrol_hours_total = 0
 		@hours = Hash.new
 		
 		column_num = (params[:column] || 2).to_i
-		session = GoogleDrive.login("ellaleeforest@gmail.com", "elfhouston")
-		ws = session.spreadsheet_by_key("0AumP8MJ6pPMwdG03WUQ0SEV6cm5tTklqRF95aWUtNVE").worksheets[0]
+		session = GoogleDrive.login(username, password)
+		ws = session.spreadsheet_by_key(reportkey).worksheets[0]
 		
 		for row in 1..ws.num_rows
 			col1 = ws[row, 1]
