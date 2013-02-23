@@ -1,0 +1,11 @@
+<h1>Referrals</h1>
+<div id="referralsContent">
+<%= render "shared/content" %>
+</div>
+  <script type="text/javascript">
+    $(function () {
+    $('#referralsContent table td:nth-child(6)').hide();
+    $('.loggedIn #referralsContent table td:nth-child(6)').show();
+    $('#referralsContent').show();
+    });
+  </script>
