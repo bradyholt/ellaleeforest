@@ -1,0 +1,5 @@
+E:\dev\bude\build\server\update
+E:\dev\bude\build\server\bude-transaction-server.exe.config
+E:\dev\bude\build\server\bude-transaction-server.exe
+E:\dev\bude\transaction-server\obj\x86\Release\ResolveAssemblyReference.cache
+E:\dev\bude\transaction-server\obj\x86\Release\bude-transaction-server.exe

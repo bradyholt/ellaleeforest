@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{85CA950D-C003-4FD6-B609-F4810F6BABA0}"
+	ProjectSection(SolutionItems) = preProject
+		bude-transaction-server = bude-transaction-server
+		bude.conf = bude.conf
+		bude1.vsmdi = bude1.vsmdi
+		todo.txt = todo.txt
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		update-server = update-server
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dispatcher", "dispatcher\dispatcher.csproj", "{E813525A-FCAE-438A-88DA-1D289EDE15FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "server", "server\server.csproj", "{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Debug|Any CPU.Build.0 = Debug|x86
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Debug|x86.ActiveCfg = Debug|x86
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Debug|x86.Build.0 = Debug|x86
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Release|Any CPU.ActiveCfg = Release|x86
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Release|Any CPU.Build.0 = Release|x86
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Release|Mixed Platforms.Build.0 = Release|x86
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Release|x86.ActiveCfg = Release|x86
+		{A863B83E-6D7F-4BEE-928A-5E94D35CEA66}.Release|x86.Build.0 = Release|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Debug|Any CPU.Build.0 = Debug|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Debug|x86.ActiveCfg = Debug|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Debug|x86.Build.0 = Debug|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Release|Any CPU.ActiveCfg = Release|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Release|Any CPU.Build.0 = Release|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Release|x86.ActiveCfg = Release|x86
+		{E813525A-FCAE-438A-88DA-1D289EDE15FD}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = dispatcher\dispatcher.csproj
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = bude1.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

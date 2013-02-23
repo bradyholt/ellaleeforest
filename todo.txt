@@ -1,0 +1,7 @@
+Error on account not found.
+Use file name to signify error type.
+Handle statement rollover.
+Last statement
+after activiation code is used NULL field (i.e. Chase)
+Auto assign what if envelope is missing?
+Positive / negative Amy on filters

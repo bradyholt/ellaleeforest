@@ -1,0 +1,5 @@
+/Users/bholt/dev/bude/build/server/bude-dispatcher.exe.mdb
+/Users/bholt/dev/bude/build/server/bude-dispatcher.exe
+/Users/bholt/dev/bude/dispatcher/obj/x86/Release/bude-dispatcher.exe
+/Users/bholt/dev/bude/dispatcher/obj/x86/Release/bude-dispatcher.exe.mdb
+/Users/bholt/dev/bude/build/server/bude-dispatcher.exe.config

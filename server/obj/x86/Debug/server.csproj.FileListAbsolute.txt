@@ -1,0 +1,10 @@
+E:\dev\bude\server\bin\Debug\bude-server.exe.config
+E:\dev\bude\server\bin\Debug\bude-server.exe
+E:\dev\bude\server\bin\Debug\bude-server.pdb
+E:\dev\bude\server\bin\Debug\MySql.Data.dll
+E:\dev\bude\server\bin\Debug\NLog.dll
+E:\dev\bude\server\bin\Debug\RabbitMQ.Client.dll
+E:\dev\bude\server\bin\Debug\RabbitMQ.Client.xml
+E:\dev\bude\server\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\dev\bude\server\obj\x86\Debug\bude-server.exe
+E:\dev\bude\server\obj\x86\Debug\bude-server.pdb

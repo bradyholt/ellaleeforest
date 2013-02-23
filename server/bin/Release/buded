@@ -1,0 +1,62 @@
+#!/bin/bash
+#
+# buded        Startup script for the bude server daemon
+#
+# chkconfig:   2345 85 15
+# description: bude server
+# processname: buded
+
+daemon_name=buded
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/opt/mono/bin/
+NAME=bude-server
+DAEMON_PATH="/home/bude/server"
+DAEMON_BIN="bude-server.exe"
+DAEMON_PID="$DAEMON_PATH/$NAME".pid
+DAEMON="$DAEMON_PATH/$DAEMON_BIN"
+USER=bude
+MONOSERVER=$(which mono-service2)
+MONOSERVER_PID=$(cat $DAEMON_PID)
+
+case "$1" in
+	start)
+              	echo "Starting ${NAME}"
+                if [ ! -z "${MONOSERVER_PID}" ]; then
+                        if [ ! -f /proc/${MONOSERVER_PID}/exe ]; then
+                                MONOSERVER_PID=""
+                                rm ${DAEMON_PID}
+                        fi
+                fi
+
+                if [ -z "${MONOSERVER_PID}" ]; then
+                        su --session-command "${MONOSERVER} -l:${DAEMON_PID} ${DAEMON}" ${USER}
+                        echo "${NAME} was started."
+                        exit 0
+                else
+                    	echo "${NAME} is already running!"
+                        exit 1
+                fi
+        ;;
+	stop)
+             	echo "Stopping ${NAME}"
+                if [ -n "${MONOSERVER_PID}" ]; then
+                        kill -9 ${MONOSERVER_PID}
+                        rm ${DAEMON_PID}
+                        echo "${NAME} was stopped."
+                        exit 0
+                else
+                    	echo "${NAME} is not running"
+                        exit 1
+                fi
+        ;;
+        restart)
+                $0 stop
+                sleep 1
+                $0 start
+                exit 0
+        ;;
+	*)
+         echo "usage: $0 {start|stop|restart}"
+         return 2
+     esac
+exit 0

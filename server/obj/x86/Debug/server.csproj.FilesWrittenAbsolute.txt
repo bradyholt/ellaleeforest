@@ -1,0 +1,4 @@
+/Users/bholt/dev/bude/server/bin/Debug/bude-server.exe.mdb
+/Users/bholt/dev/bude/server/bin/Debug/bude-server.exe
+/Users/bholt/dev/bude/server/obj/x86/Debug/bude-server.exe
+/Users/bholt/dev/bude/server/obj/x86/Debug/bude-server.exe.mdb
