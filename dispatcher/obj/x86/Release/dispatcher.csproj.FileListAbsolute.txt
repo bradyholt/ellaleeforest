@@ -1,6 +1,0 @@
-E:\dev\bude\build\server\bude-dispatcher.exe.config
-E:\dev\bude\build\server\bude-dispatcher.exe
-E:\dev\bude\build\server\bude-dispatcher.pdb
-E:\dev\bude\dispatcher\obj\x86\Release\ResolveAssemblyReference.cache
-E:\dev\bude\dispatcher\obj\x86\Release\bude-dispatcher.exe
-E:\dev\bude\dispatcher\obj\x86\Release\bude-dispatcher.pdb

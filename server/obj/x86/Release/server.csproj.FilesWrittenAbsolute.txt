@@ -1,5 +1,0 @@
-/Users/bholt/dev/bude/build/server/bude-server.exe
-/Users/bholt/dev/bude/server/obj/x86/Release/bude-server.exe
-/Users/bholt/dev/bude/server/bin/Release/bude-server.exe.config
-/Users/bholt/dev/bude/server/bin/Release/bude-server.exe
-/Users/bholt/dev/bude/server/bin/Release/buded

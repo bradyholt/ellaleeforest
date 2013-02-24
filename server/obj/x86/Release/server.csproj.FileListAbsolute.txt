@@ -1,4 +1,0 @@
-E:\dev\bude\server\obj\x86\Release\ResolveAssemblyReference.cache
-E:\dev\bude\build\server\bude-server.exe.config
-E:\dev\bude\build\server\bude-server.exe
-E:\dev\bude\server\obj\x86\Release\bude-server.exe
