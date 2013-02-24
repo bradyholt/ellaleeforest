@@ -1,0 +1,9 @@
+
+*\bin
+*\obj
+*.DS_Store*
+*TestResults*
+*.testsettings
+testimpactdata.sdf
+bude.vsmdi
+*.pid
