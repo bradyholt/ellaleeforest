@@ -5,7 +5,7 @@ git pull
 echo "rake assets:precompile"
 bundle exec rake assets:precompile
 echo "copying files..."
-rsync -rvuz ~/dev/elf/ bholt@geekytidbits.com:web/elf
+rsync -rvuz ~/dev/elf/ bholt@geekytidbits.com:web/elf --exclude='.git/' --exclude='log/'
 echo "bundle install"
 ssh bholt@geekytidbits.com 'cd ~/web/elf && bundle install'
 echo "rake tmp:clear"
