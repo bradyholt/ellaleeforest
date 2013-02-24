@@ -29,7 +29,7 @@ case "$1" in
                 fi
 
                 if [ -z "${MONOSERVER_PID}" ]; then
-                        su --session-command "${MONOSERVER} -l:${DAEMON_PID} ${DAEMON}" ${USER}
+                        su --command "${MONOSERVER} -l:${DAEMON_PID} ${DAEMON}" ${USER}
                         echo "${NAME} was started."
                         exit 0
                 else
