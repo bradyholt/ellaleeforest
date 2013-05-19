@@ -19,6 +19,6 @@ namespace bude.server
         public string ofx_request { get; set; }
         public string ofx_response { get; set; }
         public int transaction_imports_status_id { get; set; }
-        public string error_detail { get; set; }
+        public string status_detail { get; set; }
     }
 }

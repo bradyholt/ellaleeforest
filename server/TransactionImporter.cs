@@ -75,7 +75,7 @@ namespace bude.server
                         scope.Complete();
                     }
 
-                    import.error_detail = null;
+                    import.status_detail = null;
                     import.transaction_imports_status_id = (int)TransactionImportsStatusEnum.IMPORTED;
                     m_db.Save(import);
 
@@ -83,7 +83,7 @@ namespace bude.server
                 catch (Exception ex)
                 {
                     import.transaction_imports_status_id = (int)TransactionImportsStatusEnum.ERROR;
-                    import.error_detail = ex.Message; //TODO: change this error text.
+                    import.status_detail = ex.Message; //TODO: change this error text.
                     m_db.Save(import);
                 }
 
