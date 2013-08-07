@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="server/DTO/TransactionImport.cs">
     <Files>
-      <File FileName="server/TransactionImporter.cs" Line="21" Column="3" />
+      <File FileName="server/TransactionImporter.cs" Line="1" Column="1" />
       <File FileName="server/OFX/OfxParser.cs" Line="1" Column="1" />
       <File FileName="server/DTO/TransactionImport.cs" Line="22" Column="36" />
     </Files>

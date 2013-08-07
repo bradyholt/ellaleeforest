@@ -16,39 +16,28 @@ namespace bude.server
         static void Main(string[] args)
         {
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
-
-#if DEBUG
-            Service service = new Service();
-          //  service.Startup();
+            System.Net.ServicePointManager.ServerCertificateValidationCallback = CertificateValidator;
 
             Database s_db = new PetaPoco.Database(
-                ConfigurationManager.ConnectionStrings["BUDE_PRODUCTION"].ConnectionString.Replace("localhost", "www.veritasclass.com"), 
+                ConfigurationManager.ConnectionStrings["BUDE_PRODUCTION"].ConnectionString, 
                 ConfigurationManager.ConnectionStrings["BUDE_PRODUCTION"].ProviderName);
-            
-            //TransactionsFilterEngine tfe = new TransactionsFilterEngine(s_db);
-            //tfe.RunFilters(2);
 
-            //TransactionFetcher tf = new TransactionFetcher(s_db);
-            //tf.FetchAndSaveNewTransactions();
+            TransactionsFilterEngine tfe = new TransactionsFilterEngine(s_db);
+            s_logger.Info("Running filters for all users...");
+            tfe.RunFiltersForAllUsers();
 
-            //Notifer notifier = new Notifer(s_db);
-            //notifier.SendNotificationForAllUsers();
+            TransactionFetcher tf = new TransactionFetcher(s_db);
+            s_logger.Info("Fetching transactions for all users...");
+            tf.FetchAndSaveNewTransactions();
+
+            Notifer notifier = new Notifer(s_db);
+            notifier.SendNotificationForAllUsers();
 
             TransactionImporter importer = new TransactionImporter(s_db);
-            TransactionImport import = s_db.Single<TransactionImport>(3708);
-            importer.ImportOfx(import);
-         
-            Console.WriteLine("Debug mode: Press any key to exit...");
-            Console.ReadLine();
-           // service.Shutdown();
-#else
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[] 
-			{ 
-				new Service() 
-			};
-            ServiceBase.Run(ServicesToRun);
-#endif
+            s_logger.Info("Running all pending imports.");
+            importer.ImportAllPending();
+            
+            Console.WriteLine("Done.");
         }
 
         static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
@@ -60,6 +49,15 @@ namespace bude.server
             }
 
             s_logger.FatalException("Unhandled Exception in AppDomain", ex);
+        }
+
+        public static bool CertificateValidator(object sender,
+      System.Security.Cryptography.X509Certificates.X509Certificate certificate,
+      System.Security.Cryptography.X509Certificates.X509Chain chain,
+      System.Net.Security.SslPolicyErrors sslPolicyErrors)
+        {
+            //trust all certificates
+            return true;
         }
     }
 }
