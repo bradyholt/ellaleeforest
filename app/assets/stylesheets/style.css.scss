@@ -1,0 +1,69 @@
+html,body { height: 100%; margin: 0; padding: 0; overflow:auto;}
+body { background-image: asset-url("wood.jpg", image); background-position:center; background-repeat: repeat-y; }
+h2,h3,h4 { margin-top:20px;}
+td h2,h3,h4 { margin-top:5px; }
+
+header { height:90px; padding: 15px 0 5px 0; text-align: center; color:#ffffff; }
+
+footer { font-style:italic; height:50px; color:#ffffff; border: none; margin-top:0px; padding-top:10px;
+	a {
+		color:#ffffff; 
+		text-decoration:underline; 
+		font-style:italic; 
+		&:hover { color:#ffffff; }
+		&:visited { color:#ffffff; }
+	}
+}
+
+#contentWrapper { background-color:White;}
+#content { background-color: white; padding: 10px 0 40px 0}
+
+$menu-active-hover-bg-color: #602600;
+$menu-border-color: #471801;
+
+#menu { background-color: #4B3124; border-top: solid 1px $menu-border-color; border-bottom: solid 1px $menu-border-color;
+	ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none; }
+	li {display:block;
+		&.active 
+			a { background-color: $menu-active-hover-bg-color;}
+		a { line-height:20px; text-decoration:none; float:none; display:block; color:white; font-weight:bold; 
+			&:hover { background-color: $menu-active-hover-bg-color }
+		}
+	}
+}
+
+#tblMain { background-color:white; width:100%;}
+#tblMain td.hd { display:none;}
+#tblMain tr.rShim {display:none;}
+.editLink { float:right; font-size: smaller;}
+.contentRight { 
+	text-align:center;
+	.well { margin-top: 20px; text-align:left; 
+		strong { font-size:larger; font-weight:bold; display:block; margin-bottom:5px; }
+	}
+}
+
+#loginWrapper { width: 450px; padding:10px; margin: 0 auto; background-color: #FFF9E5; border: solid 1px #FFE493; 
+	strong { font-size:larger; }
+	p { margin-top:5px; }
+}
+
+#docContent.loggedin {  }
+
+
+#oldBrowserWarning { display:none;
+	strong { color: red; }
+}
+
+.oldie #footContainer { margin-top:10px; font-style:italic; color:#ffffff; border: none; }
+.oldie .footContent { color:#ffffff; }
+.oldie .footContent a {  color:#ffffff; text-decoration:underline;  font-style:italic; }
+.oldie .footContent a:hover, .oldie .footContent a:hover { color: #ffffff; }
+.oldie #headContainer { height:90px; padding: 15px 0 5px 0; }
+.oldie #headContent { text-align: center; color:#ffffff; }
+.ie7 a[href$=".pdf"] { background-image:none; padding:0px; margin:0px;}
+.ie7 a[href$=".doc"] { background-image:none; padding:0px; margin:0px;}
+.ie7 a[href$=".xls"] { background-image:none; padding:0px; margin:0px;}
+
+.ie6 #oldBrowserWarning { display:block; }
+.ie7 #oldBrowserWarning { display:block; }
