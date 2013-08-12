@@ -8,3 +8,4 @@ testimpactdata.sdf
 bude.vsmdi
 *.pid
 *.config
+deploy.sh
