@@ -1,0 +1,21 @@
+<% content_for :head do %>
+   <script type="text/javascript">
+     $(function () {
+			$("#password").focus();
+     });
+   </script>
+<% end %>
+
+<div id="loginWrapper">
+	<strong>Restricted</strong>
+	<p>This page is restricted to Ella Lee Forest residents only.  Please enter the valid password to continue.  Contact the <a href="mailto:webmaster@ellaleeforest.org">webmaster</a> if you are having trouble.</p>
+	<% flash.each do |key, msg| %>
+		<%= content_tag :div, msg, :class => [key, " alert-message error"], :id => "notice_ #{key}" %>
+	<% end %>
+	<%= form_tag(:action => 'authenticate') do %>
+	  <%= label_tag(:password, "Password:") %>
+	  <%= password_field_tag(:password) %>
+	  <%= hidden_field_tag 'originalUrl', params[:originalUrl] %>
+	  <%= submit_tag "Login", :class => "btn success" %>
+	<% end %>
+</div>

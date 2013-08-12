@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <title>Ella Lee Forest | Houston, TX</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= yield :head %>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+    <div id="oldBrowserWarning" class="alert-message warning">
+        <strong>Warning!</strong>  You are using an older browser which negatively effects the appearance of this
+        website. Please consider using a <a href="http://browsehappy.com/" target="_blank">modern brower</a> to view this site.
+    </div>
+    <header>
+        <div class="container" id="headContainer">
+			<div class="row">
+                <div class="span16" id="headContent">
+					<a href="/"><%= image_tag "elf-text.png", :alt=> "Ella Lee Forest" %></a>
+					<div>The quiet little neighborhood of Ella Lee Forest nestled in Houston, Texas</div>
+				</div>
+			</div>
+        </div>
+    </header>
+    <div id="menu">
+        <div class="container">
+            <div class="row">
+                <div class="span16">
+                    <ul class="nav">
+                        <%=active_link_to "Welcome", {:controller => "welcomes", :action => "show" }, :wrap_tag => :li %>
+                        <%=active_link_to "HOA", {:controller => "hoa"}, :wrap_tag => :li%>
+                        <%=active_link_to "Calendar", {:controller => "calendar"}, :wrap_tag => :li%>
+                        <%=active_link_to "Email Group", {:controller => "email-group"}, :wrap_tag => :li%>
+                        <%=active_link_to "Crime Prevention", {:controller => "crime-prevention"}, :wrap_tag => :li%>
+                        <%=active_link_to "Resources", {:controller => "resources"}, :wrap_tag => :li%>
+                        <%=active_link_to "Referrals", {:controller => "referrals"}, :wrap_tag => :li%>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contentWrapper">
+        <div class="container">
+            <div class="row" id="content">
+                <% if logged_in? %>
+				<div id="mainContent" class="span16 loggedIn">
+				<% else %>
+				<div id="mainContent" class="span16">
+				 <% end %>
+					<%= yield %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container" id="footContainer">
+            <div class="row">
+                <div class="span12 footContent">					
+                    Ella Lee Forest - Houston, TX 77018 | <a target="_blank" href="http://maps.google.com/maps/ms?msid=210049917671577451512.0004b1402f9ba6de53005&msa=0&ll=29.84137,-95.432932&spn=0.015746,0.0156">
+                        Map</a>
+                </div>
+                <div class="span4 footContent">
+                    <a href="mailto:webmaster@ellaleeforest.org">Contact Webmaster</a>&nbsp;|&nbsp;
+					<% if logged_in? %>
+					<%=link_to 'Logout', { :controller => "authentication", :action => "logout" }%>
+					<% else %>
+					<%=link_to 'Login', { :controller => "authentication" }%>
+					<% end %>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-26967085-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>
