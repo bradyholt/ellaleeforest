@@ -53,6 +53,7 @@ module ElfWeb
 
     config.gdata_username = 'ellaleeforest@gmail.com'
     config.gdata_password = 'elfhouston'
+    config.gdata_reportkey = '0AumP8MJ6pPMwdG03WUQ0SEV6cm5tTklqRF95aWUtNVE'
 	config.restricted_area_passwords = ['elfhouston', 'guinea', 'guineas', 'giney', 'ginea', 'ginee', 'gine', 'ginea', 'guineafowl', 'guinea fowl']
   end
 end

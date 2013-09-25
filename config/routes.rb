@@ -50,6 +50,8 @@ ElfWeb::Application.routes.draw do
 
   root :to => 'welcomes#show'
 
+  get "citizen-patrol/report" => 'citizen_patrols#report'
+
   resource :email_group, :path => '/email-group'
   resource :citizen_patrol, :path => '/citizen-patrol'
   resource :crime_prevention, :path => '/crime-prevention'
