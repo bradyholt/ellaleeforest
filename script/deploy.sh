@@ -1,11 +1,11 @@
 #!/bin/bash
 
-cd ~/dev/elf
+cd ~/dev/ellaleeforest
 git pull
 echo "rake assets:precompile"
-bundle exec rake assets:precompile
+bundle exec rake assets:precompile RAILS_ENV=production
 echo "copying files..."
-rsync -rvuz ~/dev/elf/ bholt@gtb:web/elf --exclude='.git/' --exclude='log/'
+rsync -rvuz --delete ~/dev/ellaleeforest/ bholt@gtb:web/elf --exclude='.git/' --exclude='log/'
 echo "bundle install"
 ssh bholt@gtb 'cd ~/web/elf && bundle install'
 echo "rake tmp:clear"
