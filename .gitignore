@@ -7,7 +7,6 @@ testimpactdata.sdf
 bude.vsmdi
 *.pid
 *.config
-deploy.sh
 *.rbc
 *.sassc
 .sass-cache
@@ -24,4 +23,3 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
-script/deploy.sh
