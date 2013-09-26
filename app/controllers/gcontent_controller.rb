@@ -7,7 +7,7 @@ class GcontentController < ApplicationController
 	super()
   end
 
-  def show
+  def index
 	if @isSpreadsheet == true
 		@docContent = Gdata.retrieveSpreadSheet(@docID, Gdata::FORMAT_HTML_BODY_ONLY)
 	 else

@@ -32,11 +32,11 @@
             <div class="row">
                 <div class="span16">
                     <ul class="nav">
-                        <%=active_link_to "Welcome", {:controller => "welcomes", :action => "show" }, :wrap_tag => :li %>
-                        <%=active_link_to "HOA", {:controller => "hoa"}, :wrap_tag => :li%>
-                        <%=active_link_to "Calendar", {:controller => "calendar"}, :wrap_tag => :li%>
-                        <%=active_link_to "Email Group", {:controller => "email-group"}, :wrap_tag => :li%>
-                        <%=active_link_to "Crime Prevention", {:controller => "crime-prevention"}, :wrap_tag => :li%>
+                        <%=active_link_to "Welcome", {:controller => "welcomes"}, :wrap_tag => :li %>
+                        <%=active_link_to "HOA", {:controller => "hoas"}, :wrap_tag => :li%>
+                        <%=active_link_to "Calendar", {:controller => "calendars"}, :wrap_tag => :li%>
+                        <%=active_link_to "Email Group", {:controller => "email_groups"}, :wrap_tag => :li%>
+                        <%=active_link_to "Crime Prevention", {:controller => "crime_preventions"}, :wrap_tag => :li%>
                         <%=active_link_to "Resources", {:controller => "resources"}, :wrap_tag => :li%>
                         <%=active_link_to "Referrals", {:controller => "referrals"}, :wrap_tag => :li%>
                     </ul>

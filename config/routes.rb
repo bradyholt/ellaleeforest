@@ -48,25 +48,24 @@ ElfWeb::Application.routes.draw do
   #     resources :products
   #   end
 
-  root :to => 'welcomes#show'
+  root :to => 'welcomes#index'
 
   get "citizen-patrol/report" => 'citizen_patrols#report'
-
-  resource :email_group, :path => '/email-group'
-  resource :citizen_patrol, :path => '/citizen-patrol'
-  resource :crime_prevention, :path => '/crime-prevention'
-  resource :welcome, :calendar, :citizen_patrol, :hoa, :referrals, :resources, :crime_prevention
+  get ":controller/:action"
   
-  match "/patrol" => redirect("/citizen-patrol")
-  match "/citizenpatrol" => redirect("/citizen-patrol")
+  resources :email_groups, :path => '/email-group'
+  resources :citizen_patrols, :path => '/citizen-patrol'
+  resources :crime_preventions, :path => '/crime-prevention'
+  resources :hoas, :path => '/hoa'
+  resources :calendars, :path => '/calendar'
+  resources :welcomes, :referrals, :resources
+ 
+
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
 
   # See how all your routes lay out with "rake routes"
 
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id(.:format)))'
 
 end
