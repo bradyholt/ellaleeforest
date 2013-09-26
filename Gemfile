@@ -17,10 +17,13 @@ gem 'coffee-rails', '~> 4.0.0'
 # in production environments by default.
 
 gem 'jquery-rails'
+gem 'nokogiri', '~>1.5.10'
 gem 'gdata'
-gem 'google_drive'
-gem 'therubyracer', :platform => :ruby
+gem 'google_drive', '~>0.3.2'
 gem 'actionpack-action_caching'
+
+gem 'therubyracer', :platform => :ruby
+gem 'libv8', '~> 3.11.8'
 
 group :development, :test do
 	gem 'debugger'
