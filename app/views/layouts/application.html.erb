@@ -67,9 +67,9 @@
                 <div class="span4 footContent">
                     <a href="mailto:webmaster@ellaleeforest.org">Contact Webmaster</a>&nbsp;|&nbsp;
 					<% if logged_in? %>
-					<%=link_to 'Logout', { :controller => "authentication", :action => "logout" }%>
+					<%=link_to 'Logout', logout_path %>
 					<% else %>
-					<%=link_to 'Login', { :controller => "authentication" }%>
+					<%=link_to 'Login', new_authentication_path %>
 					<% end %>
                 </div>
             </div>

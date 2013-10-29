@@ -12,7 +12,7 @@
 	<% flash.each do |key, msg| %>
 		<%= content_tag :div, msg, :class => [key, " alert-message error"], :id => "notice_ #{key}" %>
 	<% end %>
-	<%= form_tag(:action => 'authenticate') do %>
+	<%= form_tag(:action => 'create') do %>
 	  <%= label_tag(:password, "Password:") %>
 	  <%= password_field_tag(:password) %>
 	  <%= hidden_field_tag 'originalUrl', params[:originalUrl] %>

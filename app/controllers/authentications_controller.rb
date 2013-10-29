@@ -1,8 +1,8 @@
-class AuthenticationController < ApplicationController
-	def index		
+class AuthenticationsController < ApplicationController
+	def new		
 	end
   
-	def authenticate
+	def create
 		authenticated = false
 		ElfWeb::Application.config.restricted_area_passwords.each { |x|
 			if params[:password].casecmp(x) == 0
@@ -20,11 +20,11 @@ class AuthenticationController < ApplicationController
 			end
 		else
 			flash[:error] = "Login attempt was unsuccessful.  Please try again."
-			redirect_to :action => :index
+			redirect_to :action => :new
 		end
 	end
 	
-	def logout
+	def destroy
 		 cookies.delete(:elfauth)
 		 redirect_to "/"
 	end

@@ -51,6 +51,7 @@ ElfWeb::Application.routes.draw do
   root :to => 'welcomes#index'
 
   get "citizen-patrol/report" => 'citizen_patrols#report'
+  get "authentications/logout" => 'authentications#destroy', :as => "logout"
   get ":controller/:action"
   
   resources :email_groups, :path => '/email-group'
@@ -58,7 +59,7 @@ ElfWeb::Application.routes.draw do
   resources :crime_preventions, :path => '/crime-prevention'
   resources :hoas, :path => '/hoa'
   resources :calendars, :path => '/calendar'
-  resources :welcomes, :referrals, :resources
+  resources :welcomes, :referrals, :resources, :authentications
  
 
 
