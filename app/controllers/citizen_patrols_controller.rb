@@ -1,6 +1,6 @@
 class CitizenPatrolsController < GcontentController
 	before_filter :authenticate
-	caches_action :show, :layout => false
+	caches_action :index, :layout => false
 
 	def initialize()
 	 super("18NCEjjb79n19QrkEpT9XLBTVbZFsLdhXJ9tL-VwdB_A")
@@ -9,7 +9,7 @@ class CitizenPatrolsController < GcontentController
 	def report
 		username = ElfWeb::Application.config.gdata_username
   		password = ElfWeb::Application.config.gdata_password
-  		reportkey = ElfWeb::Application.config.gdata_reportkey
+  		reportkey = "0AumP8MJ6pPMwdG03WUQ0SEV6cm5tTklqRF95aWUtNVE"
 
 		@patrol_hours_total = 0
 		@hours = Hash.new

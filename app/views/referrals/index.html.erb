@@ -1,11 +1,30 @@
 <h1>Referrals</h1>
+<p>Below is a list of companies who have been individually recommended* by ELF residents.  The next time you are looking for help on your project consider giving one of these companies a call.  Reuse of reputable companies helps with the security of our neighborhood as we will have fewer unknown individuals coming into area.</p>
 <div id="referralsContent">
-<%= render "shared/content" %>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Company</th>
+<th>Contact</th>
+<th>Phone</th>
+<th>Referred Date</th>
+<th>Referred By</th>
+</tr>
+</thead>
+<% @referrals.each do |r| %>
+<tr>
+<td><%=r[:service]%></td>
+<td><%=r[:company]%></td>
+<td><%=r[:contact]%></td>
+<td><%=r[:phone]%></td>
+<td><%=r[:referred_date]%></td>
+<td><%=r[:referred_by]%></td>
+</tr>
+<% end %>
+</table>
 </div>
-  <script type="text/javascript">
-    $(function () {
-    $('#referralsContent table td:nth-child(6)').hide();
-    $('.loggedIn #referralsContent table td:nth-child(6)').show();
-    $('#referralsContent').show();
-    });
-  </script>
+<p>* While the above list contains recommendations from our neighbors, no resident or the ELF HOA can guarantee any work you contract them to do.  It is still up to you evaluate any company and decide on your own whether to use their services. </p>
+<div>
+	<%=link_to '[Edit]', {:action => "edit"}, :target => "_blank", :class => "editLink"%>
+</div>

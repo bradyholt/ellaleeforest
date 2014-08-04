@@ -22,7 +22,7 @@ class GcontentController < ApplicationController
 		@editUrl = "https://docs.google.com/document/d/" + @docID + "/edit?hl=en_US"
 	end
  
-	expire_action :action => :show
+	expire_action :action => :index
 	redirect_to @editUrl
   end
   
