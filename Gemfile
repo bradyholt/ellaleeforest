@@ -18,7 +18,6 @@ gem 'unicorn'
 
 gem 'jquery-rails'
 gem 'nokogiri', '~>1.5.10'
-gem 'gdata'
 gem 'google_drive', '~>0.3.2'
 gem 'actionpack-action_caching'
 
