@@ -1,27 +1,26 @@
 class GcontentController < ApplicationController
   before_filter :authenticate, :only => [:edit]
 
-  def initialize(docID, isSpreadsheet=false)
-	@docID = docID
-	@isSpreadsheet = isSpreadsheet
+  def initialize(documentTitle)
+	@docTitle= documentTitle
 	super()
   end
 
   def index
-	if @isSpreadsheet == true
-		@docContent = Gdata.retrieveSpreadSheet(@docID, Gdata::FORMAT_HTML_BODY_ONLY)
-	 else
-		@docContent = Gdata.retrieveDocument(@docID, Gdata::FORMAT_HTML_BODY_ONLY)
-	 end
+  	session = GoogleDrive.login(ElfWeb::Application.config.gdata_username, ElfWeb::Application.config.gdata_password)
+  	file = session.file_by_title(@docTitle)
+  	content = file.download_to_string
+  	parsed_content = Nokogiri::HTML(content)
+  	body = parsed_content.at_css("body").inner_html
+  	style = parsed_content.at_css("style").to_html
+  	@docContent = (style + body)
   end
 
   def edit
-	if @isSpreadsheet==true
-		@editUrl = "https://docs.google.com/spreadsheet/ccc?key=" + @docID + "&hl=en_US"
-	else
-		@editUrl = "https://docs.google.com/document/d/" + @docID + "/edit?hl=en_US"
-	end
- 
+  	session = GoogleDrive.login(ElfWeb::Application.config.gdata_username, ElfWeb::Application.config.gdata_password)
+	docId = session.file_by_title(@docTitle).resource_id.sub! 'document:', ''
+	@editUrl = "https://docs.google.com/document/d/" + docId + "/edit?hl=en_US"
+	
 	expire_action :action => :index
 	redirect_to @editUrl
   end

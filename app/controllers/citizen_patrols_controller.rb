@@ -1,10 +1,6 @@
-class CitizenPatrolsController < GcontentController
+class CitizenPatrolsController < ApplicationController
 	before_filter :authenticate
 	caches_action :index, :layout => false
-
-	def initialize()
-	 super("18NCEjjb79n19QrkEpT9XLBTVbZFsLdhXJ9tL-VwdB_A")
-	end
 
 	def report
 		username = ElfWeb::Application.config.gdata_username
