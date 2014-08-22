@@ -2,8 +2,8 @@ class GcontentController < ApplicationController
   before_filter :authenticate, :only => [:edit]
 
   def initialize(documentTitle)
-	@docTitle= documentTitle
-	super()
+	 @docTitle= documentTitle
+	 super()
   end
 
   def index
@@ -18,17 +18,10 @@ class GcontentController < ApplicationController
 
   def edit
   	session = GoogleDrive.login(ElfWeb::Application.config.gdata_username, ElfWeb::Application.config.gdata_password)
-	docId = session.file_by_title(@docTitle).resource_id.sub! 'document:', ''
-	@editUrl = "https://docs.google.com/document/d/" + docId + "/edit?hl=en_US"
+	  docId = session.file_by_title(@docTitle).resource_id.sub! 'document:', ''
+	  @editUrl = "https://docs.google.com/document/d/" + docId + "/edit?hl=en_US"
 	
-	expire_action :action => :index
-	redirect_to @editUrl
-  end
-  
-  def authenticate
-		logger.info "Authenticate user"
-		unless logged_in?
-		   redirect_to new_authentication_path(:originalUrl => request.fullpath)
-		end
+  	expire_action :action => :index
+	  redirect_to @editUrl
   end
 end

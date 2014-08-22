@@ -20,11 +20,4 @@ class ReferralsController < ApplicationController
 	expire_action :action => :index
 	redirect_to @editUrl
   end
-
-  def authenticate
-		logger.info "Authenticate user"
-		unless logged_in?
-		   redirect_to new_authentication_path(:originalUrl => request.fullpath)
-		end
-  end
 end
