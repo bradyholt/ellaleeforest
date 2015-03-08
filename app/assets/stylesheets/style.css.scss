@@ -1,9 +1,10 @@
 html,body { height: 100%; margin: 0; padding: 0; overflow:auto;}
 body { background-image: asset-url("wood.jpg", image); background-position:center; background-repeat: repeat-y; }
 h1 { margin-bottom: 18px !important; font-size: 30px !important; line-height: 36px !important; padding: 0px !important;}
-h2,h3,h4 { margin-top:20px; padding-top:0px !important; padding-bottom: 0px !importand; }
+h2,h3,h4 { margin-top:20px; padding-top:0px !important; padding-bottom: 0px !important; }
 td h2,h3,h4 { margin-top:5px; }
 li { font-size: 11pt;}
+a { padding: 0px !important; }
 header { height:90px; padding: 15px 0 5px 0; text-align: center; color:#ffffff; }
 
 footer { font-style:italic; height:50px; color:#ffffff; border: none; margin-top:0px; padding-top:10px;
