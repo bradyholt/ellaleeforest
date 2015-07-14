@@ -3,7 +3,7 @@ class CitizenPatrolsController < GcontentController
 	caches_action :index, :layout => false
 
 	def initialize()
-	 super("Citizen Patrol")
+	 super("18NCEjjb79n19QrkEpT9XLBTVbZFsLdhXJ9tL-VwdB_A")
     end
 
 	def report

@@ -44,8 +44,6 @@ module ElfWeb
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.gdata_username = 'ellaleeforest@gmail.com'
-    config.gdata_password = 'elfhouston2015'
   	config.restricted_area_passwords = ['elfhouston', 'guinea', 'guineas', 'giney', 'ginea', 'ginee', 'gine', 'ginea', 'guineafowl', 'guinea fowl']
   end
 end

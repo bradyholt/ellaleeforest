@@ -19,11 +19,12 @@ gem 'rails_12factor'
 
 gem 'jquery-rails'
 gem 'nokogiri', '~>1.5.10'
+gem 'google-api-client'
 gem 'google_drive', '~>0.3.2'
 gem 'actionpack-action_caching'
 
-gem 'therubyracer', :platform => :ruby
-gem 'libv8', '~> 3.11.8'
+gem 'libv8'
+gem 'therubyracer', '~>0.12.2', :platform=>:ruby
 
 group :development, :test do
 	gem 'debugger'
