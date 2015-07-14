@@ -25,7 +25,7 @@ class ReferralsController < ApplicationController
   end
 
   def edit
-	@editUrl = "https://docs.google.com/spreadsheets/d/1Gm8DnaUyDXaD7oQ_NodOBIawHZrRfPWjgEND6CsUJLk/edit?usp=sharing"
+	@editUrl = "https://docs.google.com/spreadsheets/d/" + key + "/edit?usp=sharing"
 	expire_action :action => :index
 	redirect_to @editUrl
   end
