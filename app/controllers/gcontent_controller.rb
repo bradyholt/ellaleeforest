@@ -20,9 +20,7 @@ class GcontentController < ApplicationController
   end
 
   def edit
-  	session = GoogleDrive.login(ElfWeb::Application.config.gdata_username, ElfWeb::Application.config.gdata_password)
 	  @editUrl = "https://docs.google.com/document/d/" + @file_id + "/edit?hl=en_US"
-	
   	expire_action :action => :index
 	  redirect_to @editUrl
   end 
