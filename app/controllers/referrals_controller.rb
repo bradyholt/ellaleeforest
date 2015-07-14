@@ -3,11 +3,20 @@ class ReferralsController < ApplicationController
   caches_action :index, :layout => false
  
   def index
-  		username = ElfWeb::Application.config.gdata_username
-  		password = ElfWeb::Application.config.gdata_password
   		key = "1Gm8DnaUyDXaD7oQ_NodOBIawHZrRfPWjgEND6CsUJLk"
 
-		session = GoogleDrive.login(username, password)
+		client = Google::APIClient.new
+		auth = client.authorization
+		auth.client_id = ENV["GOOGLE_API_CLIENT_ID"]
+		auth.client_secret = ENV["GOOGLE_API_CLIENT_SECRET"]
+		auth.scope = [
+		  "https://www.googleapis.com/auth/drive",
+		  "https://spreadsheets.google.com/feeds/"
+		]
+		auth.refresh_token = ENV["GOOGLE_API_REFRESH_TOKEN"]
+		auth.fetch_access_token!
+
+		session = GoogleDrive.login_with_oauth(auth.access_token)
 		ws = session.spreadsheet_by_key(key).worksheets[0]
 		@referrals = []
 		for row in 2..ws.num_rows
